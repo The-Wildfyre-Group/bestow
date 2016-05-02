@@ -1,0 +1,5 @@
+h1 My registries
+= link_to 'Add registry', new_account_registry_path, class: 'btn btn-primary'
+
+- @registries.each do |registry|
+  p= registry.title

@@ -1,0 +1,6 @@
+= link_to "Add new product", new_account_product_path, class: 'btn btn-primary'
+= link_to "My Products", account_products_path, class: 'btn btn-primary'
+
+- @products.each do |product|
+  p = product.title
+  p= link_to 'Add to registry', new_account_registry_product_path(product_id: product.id)

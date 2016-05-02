@@ -23,7 +23,7 @@ gem "figaro", github: 'laserlemon/figaro'
 gem 'exception_notification'
 gem 'slim'
 gem "twitter-bootstrap-rails"
-
+gem 'inherited_resources'
 
 group :development, :test do
   gem 'byebug'

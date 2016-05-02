@@ -16,4 +16,8 @@ module Auth
   def logout
     cookies.delete(:authentication_token)
   end
+
+  def authenticate_user!
+    redirect_to root_path unless current_user
+  end
 end

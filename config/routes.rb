@@ -9,4 +9,12 @@ Rails.application.routes.draw do
   get '/login', to: 'auth/sessions#new', as: :login
   delete '/logout', to: 'auth/sessions#destroy', as: :logout
   get '/signup', to: 'auth/registrations#new', as: :signup
+
+  resources :products, only: [:index, :show]
+
+  namespace :account, path: '/my' do
+    resources :products
+    resources :registries
+    resources :registry_products
+  end
 end

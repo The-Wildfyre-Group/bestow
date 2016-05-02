@@ -1,0 +1,8 @@
+= form_for [:account, @registry], data: { toggle: 'validator', disable: false } do |f|
+  .row
+    .col-lg-12.col-md-12.col-sm-12
+      .form-group
+        = f.text_field :title, class: "form-control", placeholder: "Title", required: true
+        .help-block.with-errors
+
+  = f.submit 'Create registry', class: 'btn btn-primary'

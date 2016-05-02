@@ -7,6 +7,7 @@ class Auth::RegistrationsController < Auth::BaseController
     @user = User.new(user_params)
     if @user.save
       login @user
+      redirect_to root_path
     else
       render :new
     end

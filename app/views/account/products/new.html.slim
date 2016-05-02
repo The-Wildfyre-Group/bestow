@@ -1,0 +1,13 @@
+= form_for [:account, @product], data: { toggle: 'validator', disable: false } do |f|
+  .row
+    .col-lg-12.col-md-12.col-sm-12
+      .form-group
+        = f.text_field :title, class: "form-control", placeholder: "Title", required: true
+        .help-block.with-errors
+  .row
+    .col-lg-12.col-md-12.col-sm-12
+      .form-group
+        = f.number_field :price, class: "form-control", placeholder: "Price", required: true
+        .help-block.with-errors
+
+  = f.submit 'Create product', class: 'btn btn-primary'
