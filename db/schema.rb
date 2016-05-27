@@ -11,15 +11,34 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502164040) do
+ActiveRecord::Schema.define(version: 20160525204958) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "cart_items", force: :cascade do |t|
+    t.integer "quantity"
+    t.integer "product_id"
+    t.integer "price_cents",    default: 0,     null: false
+    t.string  "price_currency", default: "USD", null: false
+    t.integer "owner_id"
+    t.string  "owner_type"
+  end
+
+  add_index "cart_items", ["owner_id"], name: "index_cart_items_on_owner_id", using: :btree
+  add_index "cart_items", ["owner_type"], name: "index_cart_items_on_owner_type", using: :btree
+
+  create_table "carts", force: :cascade do |t|
+    t.integer "user_id"
+  end
+
+  add_index "carts", ["user_id"], name: "index_carts_on_user_id", unique: true, using: :btree
+
   create_table "products", force: :cascade do |t|
     t.string  "title"
-    t.decimal "price",   precision: 8, scale: 2
     t.integer "user_id"
+    t.integer "price_cents",    default: 0,     null: false
+    t.string  "price_currency", default: "USD", null: false
   end
 
   add_index "products", ["user_id"], name: "index_products_on_user_id", using: :btree

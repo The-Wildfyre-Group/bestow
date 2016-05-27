@@ -1,5 +1,5 @@
 class Registry < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, inverse_of: :registries
 
   has_many :registry_products
   has_many :products, through: :registry_products

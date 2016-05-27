@@ -4,3 +4,4 @@
 - @products.each do |product|
   p = product.title
   p= link_to 'Add to registry', new_account_registry_product_path(product_id: product.id)
+  p= link_to 'Add to cart', product_cart_items_path(product), method: :post, remote: true

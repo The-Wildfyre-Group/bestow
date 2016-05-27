@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   delete '/logout', to: 'auth/sessions#destroy', as: :logout
   get '/signup', to: 'auth/registrations#new', as: :signup
 
-  resources :products, only: [:index, :show]
+  resources :products, only: [:index, :show] do
+    resources :cart_items, only: [:create, :destroy]
+  end
+
+  resource :cart
 
   namespace :account, path: '/my' do
     resources :products

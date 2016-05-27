@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby '2.3.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.0.0.beta3'
+gem 'rails', '5.0.0.rc1'
 gem 'pg'
 gem 'rails_12factor', group: :production
 gem 'sass-rails', '~> 5.0'
@@ -24,6 +24,10 @@ gem 'exception_notification'
 gem 'slim'
 gem "twitter-bootstrap-rails"
 gem 'inherited_resources'
+gem 'bootstrap-growl-rails'
+gem 'money-rails'
+gem 'react-rails'
+gem 'active_model_serializers', '~> 0.10.0'
 
 group :development, :test do
   gem 'byebug'
@@ -31,5 +35,6 @@ group :development, :test do
   gem 'spring'
   gem "letter_opener"
   gem 'better_errors'
+  gem 'pry-rails'
 end
 

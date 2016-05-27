@@ -1,0 +1,6 @@
+.container.text-center
+  .col-md-5.col-sm-12
+    .bigcart
+    h1 Your shopping cart
+
+  = react_component 'Cart', { cart_items: ActiveModel::Serializer::ArraySerializer.new(current_cart.cart_items, each_serializer: CartItemSerializer) }

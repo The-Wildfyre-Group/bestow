@@ -7,7 +7,7 @@ html lang="en"
     meta content="width=device-width, initial-scale=1.0" name="viewport" /
     title= content_for?(:title) ? yield(:title) : "Bestow"
     = csrf_meta_tags
-    = stylesheet_link_tag "application", :media => "all"
+    = stylesheet_link_tag "application"
 
     /! For third-generation iPad with high-resolution Retina display:
     /! Size should be 144 x 144 pixels
@@ -42,8 +42,7 @@ html lang="en"
               li= link_to 'Login', login_path
 
             li= link_to 'Products', products_path
-            li= link_to "Link2", "/path2"
-            li= link_to "Link3", "/path3"
+            li= link_to 'Cart', cart_path
     .container
       .row
         .col-lg-9
